@@ -1,0 +1,114 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+    height: 111px;
+    padding: 14px 0 29px 0;
+    box-shadow: 0.7px 1.9px 17px 4px #5d5d5d;
+    background-color: #518a75;
+}
+h1{
+    font-size: 53.5px;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+}
+.wapper{
+    height: 1076px;
+    margin-bottom: 132px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+    
+.calc{
+    width: 498px;
+    margin-top: 192px;
+}
+h2{
+    
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    color: #000000;
+    margin-top: 40px;
+}
+ .wapper .calc .wap{
+    margin-top: 99px;
+}
+
+input{
+    width: 200px;
+    height: 57px;
+    margin: 94px 71px 57px 20px;
+    padding: 0 10px 0 10px;
+    box-shadow: 2.1px 5.6px 9.8px 0.2px #5d5d5d;
+    background-color: #ffffff;
+    border: none;
+    font-size: 20px;
+    font-weight: 400;
+    
+}
+.wapper .calc .wap .center{
+    display: block;
+    margin: 0 auto;
+}
+input:nth-child(1) , input:nth-child(3) ,input:nth-child(5) , input:nth-child(7) {
+    margin-left: 0;
+    
+}
+input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8) {
+    margin-right: 0;
+    margin-left: 0;
+}
+.wapper .calc button{
+    display: block;
+    margin: 0 auto;
+    width: 230px;
+    margin-top: 101px;
+    height: 61px;
+    box-shadow: 2.1px 5.6px 9.8px 0.2px #5d5d5d;
+    background-color: #518a75;
+    font-size: 37.5px;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+}
+.wapper .calc .box{
+    display: none;
+   
+   
+  }
+  .wapper .calc .c{
+    display: none;
+   
+   
+  }
+  
+  label::before{
+    content: '';
+    position: relative;
+    left: 240px;
+    display: block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    box-shadow: 1.4px 3.8px 5.5px 0.5px #5d5d5d;
+    border: solid 1px #818382;
+    background-color: #518a75;
+    margin-bottom: 0;
+    cursor: pointer;
+    
+  }
+  .wapper .calc .box:checked+label::before{
+    content:'\2714';
+    font-size: 20px;
+    color: #ffffff;
+
+  }
+ 
+  
+    
+  
