@@ -14,7 +14,7 @@ h1{
     color: #ffffff;
 }
 .wapper{
-    height: 1076px;
+    min-height: 1076px;
     margin-bottom: 132px;
     display: flex;
     justify-content: space-between;
@@ -47,6 +47,7 @@ input{
     border: none;
     font-size: 20px;
     font-weight: 400;
+    outline: none;
     
 }
 .wapper .calc .wap .center{
@@ -74,6 +75,7 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     text-align: center;
     color: #ffffff;
     border: none;
+    outline: none;
 }
 .wapper .calc .box{
     display: none;
@@ -108,7 +110,94 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     color: #ffffff;
 
   }
- 
+  .wapper2{
+      min-height: 717px;
+      margin: 135px 0 205px 0;
+      display: flex;
+      justify-content: space-between;
+     
+
+  }
+  .wapper2 .price{
+    width: 508px;
+    min-height: 717px;
+    border-radius: 10px;
+    box-shadow: 3.8px 10.3px 24.3px 2.7px #5d5d5d;
+    background-color: #efefef
+  }
+  .wapper2 .price .border{
+    display: block;
+    margin: 0 auto;
+    width: 420px;
+    height: 5px;
+    border: solid 0.9px #5d5d5d;
+  }
+
+  .wapper2 .price .price_title{
+      margin: 72px 46px 90px 46px;
+      display: flex;
+      justify-content: space-between;
+  }
+  p{
+    font-size: 28.5px;
+    font-weight: 400;
+    color: #000000
+  }
+  .wapper2 .price .price_title .p1{
+      font-size: 21.5px;
+  }
+  .wapper2 .price .price_title .text{
+    width: 120px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    color: #518a75;
+
+}
+.wapper2 .list{
+    display: flex;
+    width: 498px;
+    height: 230px;
+    margin-top: 435px;
+    margin-left: 113px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.wapper2 .list .but{
+    width: 232px;
+    height: 66px;
+    box-shadow: 2.1px 5.6px 8.9px 1.1px #5d5d5d;
+    background-image: linear-gradient(to top, #6ed8b1, #518a75);
+    font-size: 30.5px;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+    outline: none;
+}
+.wapper2 .list .text2{
+    width: 200px;
+    height: 66px;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    color: #518a75;
+
+}
+.wapper2 .list .text3{
+    width: 495px;
+    height: 66px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    color: greenyellow;
+
+}
+#calc2{
+    opacity: .4;
+}
   
     
   
