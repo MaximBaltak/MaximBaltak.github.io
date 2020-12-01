@@ -95,7 +95,7 @@ price.expenses.push(a);
 
 let sum=sExpenses();
 
-sumExpenses.textContent = sum;
+sumExpenses.textContent = sum.toFixed(2);
 price.sumE=sum;
 
 
@@ -107,7 +107,7 @@ function pushCredit(a){
     
     let sum=sCredit();
     
-    sumCredit.textContent = sum;
+    sumCredit.textContent =sum.toFixed(2);
     price.sumC=sum;
     
     
@@ -119,7 +119,7 @@ function pushRevenue(a){
     
     let sum=sRevenue();
     
-    sumRevenue.textContent = sum;
+    sumRevenue.textContent = sum.toFixed(2);
     price.sumR = sum;
     
     
@@ -130,7 +130,7 @@ function pushContribution(a){
     
     let sum=sContribution();
     
-    sumContribution.textContent = sum;
+    sumContribution.textContent = sum.toFixed(2);
     price.sumRC=sum;
     
     
@@ -160,14 +160,14 @@ function sumPriceTotal ()
 function checkedCredit(){
     
     if (checkboxCredit.checked) {
-        Credit.style.opacity = 'none';
+        Credit.style.opacity = '1';
             if(inputTerm3.hasAttribute('disabled')){
                 inputTerm3.removeAttribute('disabled');
             }else if (inputSum3.hasAttribute('disabled')){
                 inputSum3.removeAttribute('disabled');
-            }else if (!inputPrecent3.hasAttribute('disabled')){
+            }else if (inputPrecent3.hasAttribute('disabled')){
                 inputPrecent3.removeAttribute('disabled');
-            }else if (!push3.hasAttribute('disabled')){
+            }else if (push3.hasAttribute('disabled')){
                 push3.removeAttribute('disabled');
             };
     }else{
@@ -186,27 +186,27 @@ function checkedCredit(){
 
 function checkedContribution(){
     
-    if (!checkboxContribution.checked) {
-        Credit.style.opacity = '.4';
-        if(!inputTerm4.hasAttribute('disabled')){
-            inputTerm4.addAttribute('disabled');
-        }else if (!inputSum4.hasAttribute('disabled')){
-            inputSum4.addAttribute('disabled');
-        }else if (!inputPrecent4.hasAttribute('disabled')){
-            inputPrecent4.addAttribute('disabled');
-        }else if (!push4.hasAttribute('disabled')){
-            push4.addAttribute('disabled');
+    if (checkboxContribution.checked) {
+        Contribution.style.opacity = '1';
+        if(inputTerm4.hasAttribute('disabled')){
+            inputTerm4.removeAttribute('disabled');
+        }else if (inputSum4.hasAttribute('disabled')){
+            inputSum4.removeAttribute('disabled');
+        }else if (inputPrecent4.hasAttribute('disabled')){
+            inputPrecent4.removeAttribute('disabled');
+        }else if (push4.hasAttribute('disabled')){
+            push4.removeAttribute('disabled');
         }
     }else{
-        Credit.style.opacity = 'none';
-        if(inputTerm3.hasAttribute('disabled')){
-            inputTerm3.removeAttribute('disabled');
-        }else if (inputSum3.hasAttribute('disabled')){
-            inputSum3.removeAttribute('disabled');
-        }else if (inputPrecent3.hasAttribute('disabled')){
-            inputPrecent3.removeAttribute('disabled');
-        }else if (push3.hasAttribute('disabled')){
-            push3.removeAttribute('disabled');
+        Contribution.style.opacity = '0.4';
+        if(!inputTerm4.hasAttribute('disabled')){
+            inputTerm4.setAttribute('disabled' , 'disabled');
+        }else if (!inputSum4.hasAttribute('disabled')){
+            inputSum4.setAttribute('disabled' , 'disabled');
+        }else if (!inputPrecent4.hasAttribute('disabled')){
+                setAttribute('disabled' , 'disabled');
+        }else if (!push4.hasAttribute('disabled')){
+            push4.setAttribute('disabled' , 'disabled');
         }
     };
 
@@ -226,8 +226,8 @@ push2.addEventListener('click',()=>{
 });
 
 push3.addEventListener('click',()=>{
-    let precent =((+inputSum3.value * +inputPrecent3)/100)/+inputTerm3;
-        sum = +inputSum3.value / +inputTerm3;
+    let precent =((+inputSum3.value * +inputPrecent3.value)/100)/+inputTerm3.value;
+        sum = +inputSum3.value / +inputTerm3.value;
         daySum = precent + sum;
 
     pushCredit(daySum);
@@ -237,7 +237,7 @@ push3.addEventListener('click',()=>{
 
 push4.addEventListener('click',()=>{
 
-    let d = +inputSum4.value * Math.row((1 + ( +inputPrecent4.value/12 )),+inputTerm4);
+    let d = +inputSum4.value * Math.pow((1 + ( +inputPrecent4.value/12 )),+inputTerm4.value);
 
     pushContribution(+d);
 
