@@ -121,7 +121,7 @@ function pushRevenue(a){
     
     let sum=sRevenue();
     
-    sumRevenue.textContent = sum.toFixed(2);
+    sumRevenue.textContent = sum.toFixed(2) ;
     price.sumR = sum;
    
     
@@ -143,8 +143,12 @@ function sumPriceTotal ()
     let sumExpenses = price.sumE + price.sumC;
         sumRevenue = price.sumR + price.sumRC;
         dayBuget= (sumRevenue - sumExpenses)/30;
-        sumPrice.textContent = dayBuget.toFixed(2);
-    if (dayBuget < 500) {
+        sumPrice.textContent = dayBuget.toFixed(2)+' '+'р. в день';
+    if (dayBuget <= 0 ) {
+            levelRevenue.textContent = 'Бедность';
+            levelRevenue.style.color = '#800000';
+    
+    }else if (dayBuget < 500) {
         levelRevenue.textContent = 'Низкий уровень дохода';
         levelRevenue.style.color = 'red';
     } else if (dayBuget >500 && dayBuget < 1000) {
@@ -155,7 +159,11 @@ function sumPriceTotal ()
         levelRevenue.textContent = 'Высокий  уровень дохода';
         levelRevenue.style.color = 'green';
 
-    }
+    }else if (dayBuget <= 0 ) {
+        levelRevenue.textContent = 'Бедность';
+        levelRevenue.style.color = '#800000';
+
+    };
 
 };
 
@@ -243,22 +251,28 @@ push2.addEventListener('click',()=>{
 });
 
 push3.addEventListener('click',()=>{
+    if (inputSum3.value =='' || inputPrecent3.value == '' || inputTerm3.value == '') {
+        
+        alert('Поля не должны быть пустыми');
 
-    if (+inputSum3.value >=0 && +inputPrecent3.value >=0 &&  +inputTerm3.value >= 0) {
-        let precent =((+inputSum3.value * +inputPrecent3.value)/100)/+inputTerm3.value;
-        sum = +inputSum3.value / +inputTerm3.value;
-        daySum = precent + sum;
-
-        pushCredit(daySum);
-        inputSum3.value = '';
-        inputPrecent3.value = '';
-        inputTerm3.value = '';
     }else{
-        alert('число не может быть отрицательным ');
-        inputSum3.value = '';
-        inputPrecent3.value = '';
-        inputTerm3.value = '';
-    }
+
+        if (+inputSum3.value >=0 && +inputPrecent3.value >=0 &&  +inputTerm3.value >= 0) {
+            let precent =((+inputSum3.value * +inputPrecent3.value)/100)/+inputTerm3.value;
+            sum = +inputSum3.value / +inputTerm3.value;
+            daySum = precent + sum;
+
+            pushCredit(daySum);
+            inputSum3.value = '';
+            inputPrecent3.value = '';
+            inputTerm3.value = '';
+        }else{
+            alert('число не может быть отрицательным ');
+            inputSum3.value = '';
+            inputPrecent3.value = '';
+            inputTerm3.value = '';
+        };
+    };
     
 
 });

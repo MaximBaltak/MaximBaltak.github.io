@@ -128,6 +128,7 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
 
   }
   .wapper2 .price{
+    position: relative;
     width: 508px;
     min-height: 717px;
     border-radius: 10px;
@@ -152,8 +153,59 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     font-weight: 400;
     color: #000000
   }
+  .wapper2 .price .price_title .overlay{
+        position: absolute;
+        display: none;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 213px;
+        min-height: 83px;
+        border-radius: 10px;
+        box-shadow: 3.8px 10.3px 24.3px 2.7px #5d5d5d;
+        background-color: white;
+        left: 40%;
+        padding: 20px 5px 20px 5px;
+
+    }
+    .wapper2 .price .price_title .overlay .title{
+        width: 84px;
+        height: 40px;
+        text-align: center;
+        overflow-x: auto;
+        
+    }
+    .wapper2 .price .price_title .overlay .title::-webkit-scrollbar{
+        height: 4px;
+        background-color: lightgrey;
+    }
+    .wapper2 .price .price_title .overlay .title::-webkit-scrollbar-thumb{
+        border-radius: 20px;
+        background: linear-gradient(to left, #D2691E ,#CD853F);
+    }
+    .wapper2 .price .price_title .overlay .number::-webkit-scrollbar{
+        height: 4px;
+        background-color: lightgrey;
+    }
+    .wapper2 .price .price_title .number::-webkit-scrollbar-thumb{
+        border-radius: 20px;
+        background: linear-gradient(to left, #D2691E ,#CD853F);
+    }
+    .wapper2 .price .price_title .overlay .number{
+        width: 86px;
+        height: 40px;
+        text-align: center;
+        color: red;
+        overflow-x: auto;
+        
+    }
+    
   .wapper2 .price .price_title .p1{
       font-size: 21.5px;
+  }
+  .wapper2 .price .price_title .arrow{
+    width: 8%;
+    height: 5%;
+    transform: rotate(-90deg);
   }
   .wapper2 .price .price_title .text{
     width: 120px;
@@ -163,6 +215,7 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     text-align: center;
     color: #518a75;
     overflow-x: auto;
+   
 
 }
 .wapper2 .price .price_title .text::-webkit-scrollbar{
@@ -199,6 +252,25 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
 .wapper2 .list .but:hover{
     background-image: linear-gradient(to top, #6e80d8, #518a75);
     
+}
+.wapper2 .list .text2{
+    width: 244px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    color: #518a75;
+    overflow-x: auto;
+   
+
+}
+.wapper2 .list .text2::-webkit-scrollbar{
+    height: 7px;
+    background-color: lightgrey;
+}
+.wapper2 .list .text2::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background: linear-gradient(to left, #D2691E ,#CD853F);
 }
 
 .wapper2 .list .text3{
