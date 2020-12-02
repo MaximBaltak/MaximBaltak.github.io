@@ -11,7 +11,6 @@ let inputWhat1 = document.querySelectorAll('input')[0];
     checkboxContribution = document.querySelectorAll('input')[8];
     inputTerm4 = document.querySelectorAll('input')[9];
     inputSum4 = document.querySelectorAll('input')[10];
-    inputPrecent4 = document.querySelectorAll('input')[11];
     push1 = document.querySelectorAll('button')[0];
     push2 = document.querySelectorAll('button')[1];
     push3 = document.querySelectorAll('button')[2];
@@ -192,9 +191,8 @@ function checkedContribution(){
             inputTerm4.removeAttribute('disabled');
         }else if (inputSum4.hasAttribute('disabled')){
             inputSum4.removeAttribute('disabled');
-        }else if (inputPrecent4.hasAttribute('disabled')){
-            inputPrecent4.removeAttribute('disabled');
         }else if (push4.hasAttribute('disabled')){
+
             push4.removeAttribute('disabled');
         }
     }else{
@@ -203,8 +201,6 @@ function checkedContribution(){
             inputTerm4.setAttribute('disabled' , 'disabled');
         }else if (!inputSum4.hasAttribute('disabled')){
             inputSum4.setAttribute('disabled' , 'disabled');
-        }else if (!inputPrecent4.hasAttribute('disabled')){
-                setAttribute('disabled' , 'disabled');
         }else if (!push4.hasAttribute('disabled')){
             push4.setAttribute('disabled' , 'disabled');
         }
@@ -237,9 +233,9 @@ push3.addEventListener('click',()=>{
 
 push4.addEventListener('click',()=>{
 
-    let d = +inputSum4.value * Math.pow((1 + ( +inputPrecent4.value/12 )),+inputTerm4.value);
 
-    pushContribution(+d);
+
+    pushContribution(+inputSum4.value);
 
 
 });

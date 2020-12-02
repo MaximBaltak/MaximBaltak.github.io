@@ -33,8 +33,12 @@ h2{
     color: #000000;
     margin-top: 40px;
 }
+
  .wapper .calc .wap{
     margin-top: 99px;
+}
+.wapper .calc .cilde{
+    margin-top: 83px;
 }
 
 input{
@@ -153,8 +157,10 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     font-size: 20px;
     text-align: center;
     color: #518a75;
+    
 
 }
+
 .wapper2 .list{
     display: flex;
     width: 498px;
