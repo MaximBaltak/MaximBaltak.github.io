@@ -81,7 +81,7 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     border: none;
     outline: none;
 }
-.wapper .calc button:hover{
+.wapper .calc .button_none:hover{
     background-color: #2F4F4F;
     box-shadow: 2px 5px 9px 2px #5d5d5d;
     }

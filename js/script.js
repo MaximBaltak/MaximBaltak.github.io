@@ -177,9 +177,11 @@ function checkedCredit(){
                 inputSum3.removeAttribute('disabled');
             }else if (inputPrecent3.hasAttribute('disabled')){
                 inputPrecent3.removeAttribute('disabled');
-            }else if (push3.hasAttribute('disabled')){
+            }else if (push3.hasAttribute('disabled') && !push3.classList.contains('button_none')){
                 push3.removeAttribute('disabled');
+                push3.classList.add('button_none');
             };
+        
         no[0].style.display='flex';
         list.style.marginTop ='487px';        
     }else{
@@ -190,8 +192,9 @@ function checkedCredit(){
                 inputSum3.setAttribute('disabled', 'disabled');
             }else if (!inputPrecent3.hasAttribute('disabled' )){
                 inputPrecent3.setAttribute('disabled' , 'disabled');
-            }else if (!push3.hasAttribute('disabled')){
+            }else if (!push3.hasAttribute('disabled') && push3.classList.contains('button_none')){
                 push3.setAttribute('disabled' , 'disabled');
+                push3.classList.remove('button_none');
             }
             no[0].style.display='none';
             list.style.marginTop ='307px';
@@ -206,9 +209,10 @@ function checkedContribution(){
             inputTerm4.removeAttribute('disabled');
         }else if (inputSum4.hasAttribute('disabled')){
             inputSum4.removeAttribute('disabled');
-        }else if (push4.hasAttribute('disabled')){
+        }else if (push4.hasAttribute('disabled') && !push4.classList.contains('button_none')){
 
             push4.removeAttribute('disabled');
+            push4.classList.add('button_none');
         }
         no[1].style.display='flex';
     }else{
@@ -217,8 +221,9 @@ function checkedContribution(){
             inputTerm4.setAttribute('disabled' , 'disabled');
         }else if (!inputSum4.hasAttribute('disabled')){
             inputSum4.setAttribute('disabled' , 'disabled');
-        }else if (!push4.hasAttribute('disabled')){
+        }else if (!push4.hasAttribute('disabled') && push4.classList.contains('button_none')){
             push4.setAttribute('disabled' , 'disabled');
+            push4.classList.remove('button_none');
         }
         no[1].style.display='none'
     };
