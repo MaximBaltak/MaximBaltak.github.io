@@ -24,6 +24,8 @@ let inputWhat1 = document.querySelectorAll('input')[0];
     levelRevenue = document.querySelectorAll('#qout')[5];
     Credit = document.querySelector('#calc2');
     Contribution = document.querySelector('#calc3');
+    no= document.querySelectorAll('#no');
+    list= document.querySelector('.list');
    
 let price ={
 
@@ -98,6 +100,7 @@ sumExpenses.textContent = sum.toFixed(2);
 price.sumE=sum;
 
 
+
 };
 
 function pushCredit(a){
@@ -120,7 +123,7 @@ function pushRevenue(a){
     
     sumRevenue.textContent = sum.toFixed(2);
     price.sumR = sum;
-    
+   
     
 };
 function pushContribution(a){
@@ -131,7 +134,7 @@ function pushContribution(a){
     
     sumContribution.textContent = sum.toFixed(2);
     price.sumRC=sum;
-    
+   
     
 };
 
@@ -169,6 +172,8 @@ function checkedCredit(){
             }else if (push3.hasAttribute('disabled')){
                 push3.removeAttribute('disabled');
             };
+        no[0].style.display='flex';
+        list.style.marginTop ='487px';        
     }else{
         Credit.style.opacity = '.4';
             if(!inputTerm3.hasAttribute('disabled')){
@@ -180,7 +185,9 @@ function checkedCredit(){
             }else if (!push3.hasAttribute('disabled')){
                 push3.setAttribute('disabled' , 'disabled');
             }
-    };
+            no[0].style.display='none';
+            list.style.marginTop ='307px';
+    };      
 };
 
 function checkedContribution(){
@@ -195,6 +202,7 @@ function checkedContribution(){
 
             push4.removeAttribute('disabled');
         }
+        no[1].style.display='flex';
     }else{
         Contribution.style.opacity = '0.4';
         if(!inputTerm4.hasAttribute('disabled')){
@@ -204,46 +212,73 @@ function checkedContribution(){
         }else if (!push4.hasAttribute('disabled')){
             push4.setAttribute('disabled' , 'disabled');
         }
+        no[1].style.display='none'
     };
 
 };
 
 push1.addEventListener('click',()=>{
+    if (+inputSum1.value >=0) {
+        pushExpenses(+inputSum1.value);
+        inputSum1.value = '';
+    }else{
+        alert('число не может быть отрицательным ');
+        inputSum1.value = '';
+    }
 
-    pushExpenses(+inputSum1.value);
-
+    
 
 });
 push2.addEventListener('click',()=>{
 
-    pushRevenue(+inputSum2.value);
-
+    if (+inputSum2.value >=0) {
+        pushRevenue(+inputSum2.value);
+        inputSum2.value = '';
+    }else{
+        alert('число не может быть отрицательным ');
+        inputSum2.value = '';
+    }
+    
 
 });
 
 push3.addEventListener('click',()=>{
-    let precent =((+inputSum3.value * +inputPrecent3.value)/100)/+inputTerm3.value;
+
+    if (+inputSum3.value >=0 && +inputPrecent3.value >=0 &&  +inputTerm3.value >= 0) {
+        let precent =((+inputSum3.value * +inputPrecent3.value)/100)/+inputTerm3.value;
         sum = +inputSum3.value / +inputTerm3.value;
         daySum = precent + sum;
 
-    pushCredit(daySum);
-
+        pushCredit(daySum);
+        inputSum3.value = '';
+        inputPrecent3.value = '';
+        inputTerm3.value = '';
+    }else{
+        alert('число не может быть отрицательным ');
+        inputSum3.value = '';
+        inputPrecent3.value = '';
+        inputTerm3.value = '';
+    }
+    
 
 });
 
 push4.addEventListener('click',()=>{
+    if (+inputSum4.value >=0) {
+        pushContribution(+inputSum4.value);
+        inputSum4.value = '';
 
-
-
-    pushContribution(+inputSum4.value);
-
-
+    }else{
+        alert('число не может быть отрицательным ');
+        inputSum4.value = '';
+    }
+    
 });
 
 total.addEventListener('click',()=>{
 
 
-    sumPriceTotal(+inputSum1.value);
+    sumPriceTotal();
 
 
 });

@@ -81,6 +81,11 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     border: none;
     outline: none;
 }
+.wapper .calc button:hover{
+    background-color: #2F4F4F;
+    box-shadow: 2px 5px 9px 2px #5d5d5d;
+    }
+
 .wapper .calc .box{
     display: none;
    
@@ -157,15 +162,23 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     font-size: 20px;
     text-align: center;
     color: #518a75;
-    
+    overflow-x: auto;
 
+}
+.wapper2 .price .price_title .text::-webkit-scrollbar{
+    height: 7px;
+    background-color: lightgrey;
+}
+.wapper2 .price .price_title .text::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background: linear-gradient(to left, #D2691E ,#CD853F);
 }
 
 .wapper2 .list{
     display: flex;
     width: 498px;
     height: 230px;
-    margin-top: 435px;
+    margin-top: 307px;
     margin-left: 113px;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -183,15 +196,11 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     border: none;
     outline: none;
 }
-.wapper2 .list .text2{
-    width: 200px;
-    height: 66px;
-    font-weight: 400;
-    font-size: 20px;
-    text-align: center;
-    color: #518a75;
-
+.wapper2 .list .but:hover{
+    background-image: linear-gradient(to top, #6e80d8, #518a75);
+    
 }
+
 .wapper2 .list .text3{
     width: 495px;
     height: 66px;
@@ -206,6 +215,9 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
 }
 #calc3{
     opacity: .4;
+}
+#no{
+    display: none;
 }
   
     
