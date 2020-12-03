@@ -1,8 +1,11 @@
+
+
 document.addEventListener('DOMContentLoaded', ()=>{
+
 
 let inputWhat1 = document.querySelectorAll('input')[0];
     inputSum1 = document.querySelectorAll('input')[1];
-    inputWha2 = document.querySelectorAll('input')[2];
+    inputWhat2 = document.querySelectorAll('input')[2];
     inputSum2 = document.querySelectorAll('input')[3];
     checkboxCredit = document.querySelectorAll('input')[4];
     inputTerm3= document.querySelectorAll('input')[5];
@@ -26,6 +29,8 @@ let inputWhat1 = document.querySelectorAll('input')[0];
     Contribution = document.querySelector('#calc3');
     no= document.querySelectorAll('#no');
     list= document.querySelector('.list');
+    overlay = document.querySelectorAll('.overlay'),
+    arrows = document.querySelectorAll('.arrow');
    
 let price ={
 
@@ -230,66 +235,169 @@ function checkedContribution(){
 
 };
 
+function creatListExpenses (string, number) {
+    let str = document.createElement('div'),
+        sum = document.createElement('div');
+        str.classList.add('title');
+        sum.classList.add('number');
+        overlay[0].appendChild(str);
+        overlay[0].appendChild(sum); 
+        str.textContent = string;
+        sum.textContent = '-'+number;
+};
+function creatListRevenue (string, number) {
+    let str = document.createElement('div'),
+        sum = document.createElement('div');
+        str.classList.add('title');
+        sum.classList.add('number');
+        overlay[2].appendChild(str);
+        overlay[2].appendChild(sum); 
+        str.textContent = string;
+        sum.textContent = '+'+number;
+        sum.style.color = 'green';
+};
+function creatListCredit ( number) {
+    let str = document.createElement('div'),
+        sum = document.createElement('div');
+        str.classList.add('title');
+        sum.classList.add('number');
+        overlay[1].appendChild(str);
+        overlay[1].appendChild(sum); 
+        str.textContent = 'Кредит';
+        sum.textContent = '-'+number;
+};
+function creatListCuntribution (string, number) {
+    let str = document.createElement('div'),
+        sum = document.createElement('div');
+        str.classList.add('title');
+        sum.classList.add('number');
+        overlay[3].appendChild(str);
+        overlay[3].appendChild(sum); 
+        str.textContent = string;
+        sum.textContent = '+'+number;
+        sum.style.color = 'green';
+};
+
 push1.addEventListener('click',()=>{
     if (+inputSum1.value >=0) {
-        pushExpenses(+inputSum1.value);
-        inputSum1.value = '';
+        if (+inputSum1.value !='' && +inputWhat1.value !='' ) {
+            pushExpenses(+inputSum1.value);
+            creatListExpenses(inputWhat1.value , inputSum1.value );
+            inputSum1.value = '';
+            inputWhat1.value ='';
+        }else{
+            alert('Поля не должны быть пустыми ');
+            inputSum1.value = '';
+            inputWhat1.value ='';
+        }
+
     }else{
         alert('число не может быть отрицательным ');
         inputSum1.value = '';
+        inputWhat1.value ='';
     }
-
+    
     
 
 });
 push2.addEventListener('click',()=>{
 
     if (+inputSum2.value >=0) {
-        pushRevenue(+inputSum2.value);
-        inputSum2.value = '';
+        if (+inputSum2.value !='' && +inputWhat2.value !='' ) {
+            pushRevenue(+inputSum2.value);
+            creatListRevenue(inputWhat2.value , inputSum2.value );
+            inputSum2.value = '';
+            inputWhat2.value ='';
+        }else{
+            alert('Поля не должны быть пустыми ');
+            inputSum2.value = '';
+            inputWhat2.value ='';
+        }
     }else{
         alert('число не может быть отрицательным ');
         inputSum2.value = '';
+        inputWhat2.value ='';
     }
     
 
 });
 
 push3.addEventListener('click',()=>{
-    if (inputSum3.value =='' || inputPrecent3.value == '' || inputTerm3.value == '') {
-        
-        alert('Поля не должны быть пустыми');
+    if (inputSum3.value !='' && inputPrecent3.value != '' && inputTerm3.value != '') {
+            if (+inputSum3.value >=0 && +inputPrecent3.value >=0 &&  +inputTerm3.value >= 0) {
+                creatListCredit( inputSum3.value );
+                let precent =((+inputSum3.value * +inputPrecent3.value)/100)/+inputTerm3.value;
+                sum = +inputSum3.value / +inputTerm3.value;
+                daySum = precent + sum;
+
+                pushCredit(daySum);
+                inputSum3.value = '';
+                inputPrecent3.value = '';
+                inputTerm3.value = '';
+            }else{
+                alert('число не может быть отрицательным ');
+                inputSum3.value = '';
+                inputPrecent3.value = '';
+                inputTerm3.value = '';
+            };   
 
     }else{
 
-        if (+inputSum3.value >=0 && +inputPrecent3.value >=0 &&  +inputTerm3.value >= 0) {
-            let precent =((+inputSum3.value * +inputPrecent3.value)/100)/+inputTerm3.value;
-            sum = +inputSum3.value / +inputTerm3.value;
-            daySum = precent + sum;
-
-            pushCredit(daySum);
-            inputSum3.value = '';
-            inputPrecent3.value = '';
-            inputTerm3.value = '';
-        }else{
-            alert('число не может быть отрицательным ');
-            inputSum3.value = '';
-            inputPrecent3.value = '';
-            inputTerm3.value = '';
-        };
+        alert('Поля не должны быть пустыми');
+        inputSum3.value = '';
+        inputPrecent3.value = '';
+        inputTerm3.value = '';
     };
     
 
 });
 
-push4.addEventListener('click',()=>{
-    if (+inputSum4.value >=0) {
-        pushContribution(+inputSum4.value);
-        inputSum4.value = '';
+let anime1 = anime({
+        targets: overlay[0],
+        minHeight: '50px',
+        opacity: '1.0',
+        duration: 100
+    }),
+    
+    anime2 = anime({
+        targets: overlay[1],
+        minHeight: '50px',
+        opacity: '1.0',
+        duration: 100
+    }),
+   
+    anime3 = anime({
+        targets: overlay[2],
+        minHeight: '50px',
+        opacity: '1.0',
+        duration: 100
+    }),
+    
+    anime4 = anime({
+        targets: overlay[3],
+        minHeight: '50px',
+        opacity: '1.0',
+        duration: 100
+    });
+   
+   
 
+push4.addEventListener('click',()=>{
+    if (+inputSum4.value >=0 ) {
+        if (+inputSum4.value !='' && +inputTerm4.value !='' ) {
+            pushContribution(+inputSum4.value);
+            creatListCuntribution(inputTerm4.value , inputSum4.value );
+            inputSum4.value = '';
+            inputTerm4.value ='';
+        }else{
+            alert('Поля не должны быть пустыми ');
+            inputSum4.value = '';
+            inputTerm4.value ='';
+        }
     }else{
         alert('число не может быть отрицательным ');
         inputSum4.value = '';
+        inputTerm4.value ='';
     }
     
 });
@@ -313,6 +421,72 @@ Contribution.addEventListener('click',()=>{
 
 });
 
+arrows[0].addEventListener('click',()=>{
+    if (overlay[0].style.display =='none' ) {
+        arrows[0].style.zIndex = '2';
+        arrows[0].style.transform = 'rotate(90deg)';
+        overlay[0].style.display ='flex';
+       
+        anime1.play();
+        
+    }else{
+        arrows[0].style.zIndex = '0';
+        arrows[0].style.transform = 'rotate(-90deg)';
+        overlay[0].style.display ='none';
+        
+      
+       
+    }
+
+
+});
+
+arrows[1].addEventListener('click',()=>{
+    if (overlay[1].style.display =='none' ) {
+        arrows[1].style.zIndex = '2';
+        arrows[1].style.transform = 'rotate(90deg)';
+        overlay[1].style.display ='flex';
+        anime2.play();
+    }else{
+        arrows[1].style.zIndex = '0';
+        arrows[1].style.transform = 'rotate(-90deg)';
+        overlay[1].style.display ='none';
+        
+    }
+
+});
+arrows[2].addEventListener('click',()=>{
+    if (overlay[2].style.display =='none' ) {
+        arrows[2].style.zIndex = '2';
+        arrows[2].style.transform = 'rotate(90deg)';
+        overlay[2].style.display ='flex';
+        anime3.play();
+    }else{
+        arrows[2].style.zIndex = '0';
+        arrows[2].style.transform = 'rotate(-90deg)';
+        overlay[2].style.display ='none';
+
+        
+    }
+
+
+});
+arrows[3].addEventListener('click',()=>{
+    if (overlay[3].style.display =='none' ) {
+        arrows[3].style.zIndex = '2'
+        arrows[3].style.transform = 'rotate(90deg)';
+        overlay[3].style.display ='flex';
+        anime4.play();
+    }else{
+        arrows[3].style.zIndex = '0'
+        arrows[3].style.transform = 'rotate(-90deg)';
+        overlay[3].style.display ='none';
+        
+        
+    }
+
+
+});
 
 
 

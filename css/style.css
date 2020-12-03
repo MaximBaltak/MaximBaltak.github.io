@@ -159,12 +159,14 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
         justify-content: space-between;
         flex-wrap: wrap;
         width: 213px;
-        min-height: 83px;
+        min-height: 0;
         border-radius: 10px;
         box-shadow: 3.8px 10.3px 24.3px 2.7px #5d5d5d;
         background-color: white;
         left: 40%;
-        padding: 20px 5px 20px 5px;
+        opacity: 0.0;
+        z-index: 1;
+        transition: 0.5s all;
 
     }
     .wapper2 .price .price_title .overlay .title{
@@ -206,6 +208,7 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     width: 8%;
     height: 5%;
     transform: rotate(-90deg);
+    transition: 0.5s all;
   }
   .wapper2 .price .price_title .text{
     width: 120px;
