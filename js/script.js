@@ -18,7 +18,8 @@ let inputWhat1 = document.querySelectorAll('input')[0];
     push2 = document.querySelectorAll('button')[1];
     push3 = document.querySelectorAll('button')[2];
     push4 = document.querySelectorAll('button')[3];
-    total = document.querySelectorAll('button')[4];
+    total = document.querySelectorAll('button')[5];
+    update = document.querySelectorAll('button')[4];
     sumExpenses = document.querySelectorAll('#qout')[0];
     sumCredit = document.querySelectorAll('#qout')[1];
     sumRevenue = document.querySelectorAll('#qout')[2];
@@ -31,6 +32,7 @@ let inputWhat1 = document.querySelectorAll('input')[0];
     list= document.querySelector('.list');
     overlay = document.querySelectorAll('.overlay'),
     arrows = document.querySelectorAll('.arrow');
+    console.log(update);
    
 let price ={
 
@@ -146,8 +148,8 @@ function pushContribution(a){
 function sumPriceTotal ()
 {
     let sumExpenses = price.sumE + price.sumC;
-        sumRevenue = price.sumR + price.sumRC;
-        dayBuget= (sumRevenue - sumExpenses)/30;
+        Revenue = price.sumR + price.sumRC;
+        dayBuget= (Revenue - sumExpenses)/30;
         sumPrice.textContent = dayBuget.toFixed(2)+' '+'р. в день';
     if (dayBuget <= 0 ) {
             levelRevenue.textContent = 'Бедность';
@@ -188,7 +190,7 @@ function checkedCredit(){
             };
         
         no[0].style.display='flex';
-        list.style.marginTop ='487px';        
+        list.style.marginTop ='447px';        
     }else{
         Credit.style.opacity = '.4';
             if(!inputTerm3.hasAttribute('disabled')){
@@ -277,6 +279,7 @@ function creatListCuntribution (string, number) {
         sum.textContent = '+'+number;
         sum.style.color = 'green';
 };
+
 
 push1.addEventListener('click',()=>{
     if (+inputSum1.value >=0) {
@@ -484,6 +487,28 @@ arrows[3].addEventListener('click',()=>{
         
         
     }
+
+
+});
+update.addEventListener('click',()=>{
+    sumRevenue.textContent = '';
+    sumCredit.textContent = '';
+    sumContribution.textContent = '';
+    sumExpenses.textContent = '';
+    sumPrice.textContent = '';
+    levelRevenue.textContent = '';
+    
+    price.expenses = [];
+    price.revenue = [];
+    price.revenueContribution = [];
+    price.expensesCredit = [];
+    price.sumC = 0;
+    price.sumE = 0;
+    price.sumR = 0;
+    price.sumRC = 0;
+
+    overlay[0].removeChild(str);
+
 
 
 });
