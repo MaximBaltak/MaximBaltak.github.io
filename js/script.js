@@ -32,7 +32,7 @@ let inputWhat1 = document.querySelectorAll('input')[0];
     list= document.querySelector('.list');
     overlay = document.querySelectorAll('.overlay'),
     arrows = document.querySelectorAll('.arrow');
-    console.log(update);
+    dynamic = document.querySelectorAll('#dynamic');
    
 let price ={
 
@@ -241,7 +241,9 @@ function creatListExpenses (string, number) {
     let str = document.createElement('div'),
         sum = document.createElement('div');
         str.classList.add('title');
+        str.id ='dynamic';
         sum.classList.add('number');
+        sum.id ='dynamic';
         overlay[0].appendChild(str);
         overlay[0].appendChild(sum); 
         str.textContent = string;
@@ -251,7 +253,9 @@ function creatListRevenue (string, number) {
     let str = document.createElement('div'),
         sum = document.createElement('div');
         str.classList.add('title');
+        str.id ='dynamic';
         sum.classList.add('number');
+        sum.id ='dynamic';
         overlay[2].appendChild(str);
         overlay[2].appendChild(sum); 
         str.textContent = string;
@@ -262,7 +266,9 @@ function creatListCredit ( number) {
     let str = document.createElement('div'),
         sum = document.createElement('div');
         str.classList.add('title');
+        str.id ='dynamic';
         sum.classList.add('number');
+        sum.id ='dynamic';
         overlay[1].appendChild(str);
         overlay[1].appendChild(sum); 
         str.textContent = 'Кредит';
@@ -272,7 +278,9 @@ function creatListCuntribution (string, number) {
     let str = document.createElement('div'),
         sum = document.createElement('div');
         str.classList.add('title');
+        str.id ='dynamic';
         sum.classList.add('number');
+        sum.id ='dynamic';
         overlay[3].appendChild(str);
         overlay[3].appendChild(sum); 
         str.textContent = string;
@@ -506,8 +514,20 @@ update.addEventListener('click',()=>{
     price.sumE = 0;
     price.sumR = 0;
     price.sumRC = 0;
-
-    overlay[0].removeChild(str);
+    dynamic = document.querySelectorAll('#dynamic');
+    
+       while (overlay[0].firstChild) {
+           overlay[0].removeChild(overlay[0].firstChild);
+       };
+       while (overlay[1].firstChild) {
+        overlay[1].removeChild(overlay[1].firstChild);
+        };
+        while (overlay[2].firstChild) {
+            overlay[2].removeChild(overlay[2].firstChild);
+        };
+        while (overlay[3].firstChild) {
+            overlay[3].removeChild(overlay[3].firstChild);
+        };
 
 
 

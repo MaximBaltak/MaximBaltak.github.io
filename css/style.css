@@ -73,17 +73,18 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     margin-top: 101px;
     height: 61px;
     box-shadow: 2.1px 5.6px 9.8px 0.2px #5d5d5d;
-    background-color: #518a75;
+    background: linear-gradient(to top, #000000,#2e6f58);
     font-size: 37.5px;
     font-weight: 700;
     text-align: center;
     color: #ffffff;
     border: none;
     outline: none;
+    transition: 0.5s all;
 }
 .wapper .calc .button_none:hover{
-    background-color: #2F4F4F;
     box-shadow: 2px 5px 9px 2px #5d5d5d;
+    transform: scale(1.1);
     }
 
 .wapper .calc .box{
@@ -213,7 +214,13 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     color: #000000;
     border: none;
     outline: none;
+    transition: 0.3s all;
 
+    }
+    .wapper2 .price .button_none:hover{
+
+        box-shadow: 2.1px 5.6px 9.8px 0.2px #00BFFF;
+        transform: scale(1.1);
     }
     
   .wapper2 .price .price_title .p1{
@@ -259,16 +266,18 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     width: 232px;
     height: 66px;
     box-shadow: 2.1px 5.6px 8.9px 1.1px #5d5d5d;
-    background-image: linear-gradient(to top, #6ed8b1, #518a75);
+    background-image: linear-gradient(to top ,#000000, #6ed8b1);
     font-size: 30.5px;
     font-weight: 700;
     text-align: center;
     color: #ffffff;
     border: none;
     outline: none;
+    transition: 0.3s all;
 }
 .wapper2 .list .but:hover{
-    background-image: linear-gradient(to top, #6e80d8, #518a75);
+    box-shadow: 2.1px 5.6px 8.9px 1.1px #00b365;
+    transform: scale(1.1);
     
 }
 .wapper2 .list .text2{
