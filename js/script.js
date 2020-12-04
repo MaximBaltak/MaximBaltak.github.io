@@ -190,7 +190,10 @@ function checkedCredit(){
             };
         
         no[0].style.display='flex';
-        list.style.marginTop ='447px';        
+       ; 
+        if (window.screen.width > 1199) {
+            list.style.marginTop ='447px'
+        }       
     }else{
         Credit.style.opacity = '.4';
             if(!inputTerm3.hasAttribute('disabled')){
@@ -204,7 +207,10 @@ function checkedCredit(){
                 push3.classList.remove('button_none');
             }
             no[0].style.display='none';
-            list.style.marginTop ='307px';
+            if (window.screen.width > 1199) {
+                list.style.marginTop ='307px';
+            }       
+            
     };      
 };
 

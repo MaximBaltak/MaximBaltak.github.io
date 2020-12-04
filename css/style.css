@@ -125,6 +125,7 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
       margin: 135px 0 205px 0;
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
      
 
   }
@@ -160,6 +161,7 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
         display: none;
         justify-content: space-between;
         flex-wrap: wrap;
+        padding: 20px 10px 20px 10px;
         width: 213px;
         min-height: 0;
         border-radius: 10px;
@@ -257,7 +259,6 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     width: 498px;
     height: 230px;
     margin-top: 307px;
-    margin-left: 113px;
     justify-content: space-between;
     flex-wrap: wrap;
 
@@ -320,4 +321,60 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
 }
   
     
-  
+  @media (max-width: 1199px) {
+
+    h1{
+        font-size: 45.5px;
+    }
+
+    .calc{
+        width: 498px;
+        margin: 0 auto;
+        margin-top: 192px;
+
+    }
+    .wapper2 .price{
+        margin: 0 auto;
+      }
+
+    .wapper2 .price .border{
+       
+        width: 79%;
+       
+      }
+    .wapper2 .list{
+    
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+}
+@media (max-width: 900px) {
+
+    h1{
+        font-size: 39.5px;
+    }
+}
+
+@media (max-width: 686px) {
+
+    .header {
+        height: 186px;
+        
+    }
+
+    h1{
+        font-size: 48.5px;
+    }
+    .wapper2 .list{
+        margin: 0 auto;
+        padding-left: 0;
+        margin-top: 50px;
+    }
+    .wapper2 .list .text2{
+        margin-top: 20px;
+        font-size: 30px;
+       
+    
+    }
+}
