@@ -540,21 +540,4 @@ update.addEventListener('click',()=>{
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });

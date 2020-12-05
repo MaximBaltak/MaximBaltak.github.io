@@ -326,7 +326,19 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
     h1{
         font-size: 45.5px;
     }
-
+    .wapper .calc .button_none:hover{
+        box-shadow: 2px 5px 9px 2px #5d5d5d;
+        transform: scale(1.0);
+        }
+    .wapper2 .list .but:hover{
+        box-shadow: 2.1px 5.6px 8.9px 1.1px #5d5d5d;
+        transform: scale(1.0);
+        
+    }
+    .wapper2 .price .button_none:hover{
+        box-shadow: 2.1px 5.6px 9.8px 0.2px #5d5d5d;
+        transform: scale(1.0);
+    }
     .calc{
         width: 498px;
         margin: 0 auto;
@@ -376,5 +388,114 @@ input:nth-child(2) , input:nth-child(4) ,input:nth-child(6) , input:nth-child(8)
         font-size: 30px;
        
     
+    }
+}
+@media (max-width: 502px) {
+
+
+    h2{
+        font-size: 32px;
+    }
+    .wapper .calc{
+        width: 362px;
+    }
+    .wapper .calc .wap{
+       margin-left: 20%;
+    }
+    .wapper .calc .wap .center{
+        display: inline-block;
+        margin-top: 55px;
+    }
+    label::before{
+        left: 160px;  
+    }
+    .wapper2 .price{
+    width: 385px;
+    }
+    .wapper2 .price .price_title .p1 {
+        font-size: 17.5px;
+    }
+    .wapper2 .list{
+        width: 264px;
+    }
+    .wapper2 .list .text2{
+        margin-top: 20px;
+        font-size: 30px;
+       
+    
+    }
+}
+@media (max-width: 416px){
+    .header{
+        height: 267px;
+    }
+    h1{
+        font-size: 51.5px;
+    }
+    
+    .wapper2 .price {
+        width: 305px;
+    }
+
+    .wapper2 .price_title .p1 {
+        font-size: 15.5px;
+    }
+    .wapper2 .list {
+        width: 245px;
+    }
+    .wapper2 .price .price_title .overlay {
+        padding: 20px 0 20px 0;
+        left: 32%;
+        width: 192px;
+    }
+    .wapper2.price_title .p1 {
+        font-size: 16.5px;
+    }
+
+}
+@media (max-width: 352px){
+    h1{
+        font-size: 43.5px;
+    }
+
+    .wapper .calc{
+        width: 243px;
+    }
+    .wapper .calc .wap {
+        margin-left: 9%;
+    }
+    .wapper .calc button{
+        width: 200px;
+    }
+    label::before{
+        left: 107px;
+    }
+    .wapper2 .price {
+        width: 305px;
+    }
+    .wapper2 .list {
+        width: 245px;
+    }
+    
+    .wapper2 .price .price_title .overlay {
+        padding: 20px 0 20px 0;
+        left: 32%;
+        width: 192px;
+    }
+    .wapper2 .price_title .p1 {
+        font-size: 15.5px;
+    }
+
+}
+@media (max-width: 320px){
+    .wapper2 .price .price_title {
+        margin: 72px 5px 90px 5px;
+    }
+    input{
+        width: 184px;
+        
+    }
+    .wapper2 .price {
+        width: 283px;
     }
 }
